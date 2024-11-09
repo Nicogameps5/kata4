@@ -69,11 +69,11 @@ public class DatabaseTitleWriter implements TitleWriter, AutoCloseable{
 
     private List<Parameter> toParameters(Title title) {
         return List.of(
-                new Parameter(1, title.id(), Types.LONGNVARCHAR);
-                new Parameter(2, title.title(), Types.LONGNVARCHAR);
-                new Parameter(3, title.year(), Types.LONGNVARCHAR);
-                new Parameter(4, title.duration(), Types.LONGNVARCHAR);
-        )
+                new Parameter(1, title.id(), Types.LONGNVARCHAR),
+                new Parameter(2, title.title(), Types.LONGNVARCHAR),
+                new Parameter(3, title.year(), Types.LONGNVARCHAR),
+                new Parameter(4, title.duration(), Types.LONGNVARCHAR)
+        );
     }
 
     private record Parameter(int id, Object value, int type){
